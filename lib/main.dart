@@ -13,17 +13,24 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
-          child: ListView(
-            shrinkWrap: true,
-            children: [
-              Padding(
+          child: ListView.separated(
+            itemCount: 18,
+            itemBuilder: (context, index) {
+              return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  height: 300,
-                  color: Colors.yellow,
+                  height: 100,
+                  color: Colors.red,
                 ),
+              );
+            },
+            separatorBuilder: (context, index) => Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: 100,
+                color: Colors.black,
               ),
-            ],
+            ),
           ),
         ),
       ),
